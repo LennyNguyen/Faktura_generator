@@ -1,0 +1,60 @@
+<!doctype html>
+<html lang="da">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Faktura generator</title>
+  <style>
+    body { font-family: Arial, sans-serif; background:#f5f5f5; }
+    .invoice {
+      width: 900px;
+      margin: 30px auto;
+      background: #fff;
+      border: 1px solid #ddd;
+      padding: 24px;
+      display: flex;
+      flex-direction: column;
+      min-height: 700px;
+      box-sizing: border-box;
+    }
+    .inv-body { flex: 1; }
+    table { width: 100%; border-collapse: collapse; }
+    th, td { padding: 8px; border-bottom: 1px solid #eee; text-align: right; }
+    th:first-child, td:first-child { text-align: left; }
+
+    .inv-totals-section {
+      margin-top: auto;
+      padding-top: 16px;
+    }
+    .inv-totals { width: 320px; margin-left: auto; }
+    .inv-totals .row { display:flex; justify-content:space-between; margin: 8px 0; }
+    .total { background:#f97316; color:#fff; padding:10px 12px; border-radius:6px; font-weight:bold; }
+    .footer { margin-top:16px; padding-top:10px; border-top:1px solid #ddd; color:#666; font-size:13px; }
+  </style>
+</head>
+<body>
+  <div class="invoice">
+    <h1>FAKTURA</h1>
+
+    <div class="inv-body">
+      <table>
+        <thead>
+          <tr><th>Beskrivelse</th><th>Antal</th><th>Pris</th><th>Linjetotal</th></tr>
+        </thead>
+        <tbody>
+          <tr><td>Udviklingstimer</td><td>2</td><td>950,00 kr</td><td>1.900,00 kr</td></tr>
+        </tbody>
+      </table>
+    </div>
+
+    <div class="inv-totals-section">
+      <div class="inv-totals">
+        <div class="row"><span>Subtotal</span><span>1.900,00 kr</span></div>
+        <div class="row"><span>MOMS (25%)</span><span>475,00 kr</span></div>
+        <div class="row total"><span>TOTAL DKK</span><span>2.375,00 kr</span></div>
+      </div>
+      <div class="footer">Tak for din ordre • kontakt@firma.dk • +45 12 34 56 78</div>
+    </div>
+  </div>
+</body>
+</html>
